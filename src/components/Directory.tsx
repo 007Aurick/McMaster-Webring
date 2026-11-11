@@ -108,8 +108,11 @@ export default function Directory({ members }: { members: Member[] }) {
                 <h3><a href={`/go?id=${m.id}`} target="_blank" rel="noopener">{m.name}</a></h3>
                 {m.program && <p className="person-program">{m.program}</p>}
                 {m.description && <p className="person-line">{m.description}</p>}
-                {SOCIALS.some((key) => m[key]) && (
-                  <div className="person-foot">
+                <div className="person-foot">
+                  <a className="person-site" href={`/go?id=${m.id}`} target="_blank" rel="noopener">
+                    {m.website.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                  </a>
+                  {SOCIALS.some((key) => m[key]) && (
                     <div className="socials">
                       {SOCIALS.map((key) =>
                         m[key] ? (
@@ -119,8 +122,8 @@ export default function Directory({ members }: { members: Member[] }) {
                         ) : null,
                       )}
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </article>
           </li>

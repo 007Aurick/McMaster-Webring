@@ -260,7 +260,14 @@ h2 {
   margin: 0; font-family: "Iowan Old Style", Palatino, Georgia, serif; font-style: italic;
   font-size: 16px; line-height: 1.35; color: #3a332c;
 }
-.person-foot { display: flex; align-items: center; justify-content: flex-end; align-self: stretch; margin-top: auto; padding-top: 12px; }
+.person-site {
+  font-size: 13px; color: var(--maroon); text-decoration: none; word-break: break-all;
+}
+.person-site:hover { text-decoration: underline; }
+.person-foot {
+  display: flex; align-items: center; justify-content: flex-end; align-self: stretch; gap: 10px;
+  margin-top: auto; padding-top: 12px;
+}
 .socials { display: flex; align-items: center; gap: 10px; }
 .socials a { color: var(--hot); display: inline-flex; }
 .socials a:hover { color: var(--maroon); }
