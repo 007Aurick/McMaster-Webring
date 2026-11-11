@@ -41,7 +41,7 @@ const script = `(function () {
   box.style.cssText = 'display:inline-flex;align-items:center;gap:' + Math.round(size / 3) + 'px;color:' + color + ';font:600 ' + Math.round(size * 0.6) + 'px/1 system-ui,-apple-system,sans-serif;';
 
   var prev = link(go('prev'), '&larr;', 'Previous site in the McMaster webring');
-  var home = link(BASE + (user ? '/?ref=' + encodeURIComponent(user) : ''), mark, 'mcmaster.network');
+  var home = link(BASE + (user ? '/?ref=' + encodeURIComponent(user) : ''), mark, 'McMaster Webring');
   var next = link(go('next'), '&rarr;', 'Next site in the McMaster webring');
   box.appendChild(prev); box.appendChild(home); box.appendChild(next);
 

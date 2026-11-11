@@ -1,4 +1,4 @@
-# mcmaster.network
+# McMaster Webring
 
 A webring for McMaster students with personal websites. Not affiliated with the university.
 
@@ -33,7 +33,7 @@ Open a pull request. The check only passes if the pull request touches `src/data
 ## 2. Add the widget to your site
 
 ```html
-<script src="https://mcmaster.network/embed.js" data-user="your-name"></script>
+<script src="https://your-domain/embed.js" data-user="your-name"></script>
 ```
 
 `data-user` is the `id` from your entry. The arrows go to the previous and next person. The caption says who is next.

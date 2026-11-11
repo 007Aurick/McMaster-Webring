@@ -5,7 +5,7 @@ import { members } from "@/data/members";
 import { LOGO_ASCII } from "@/data/logo-ascii";
 import { SITE_URL } from "@/lib";
 
-const REPO = process.env.NEXT_PUBLIC_REPO_URL || "https://github.com/YOUR-USERNAME/mcmaster.network";
+const REPO = process.env.NEXT_PUBLIC_REPO_URL || "https://github.com/007Aurick/McMaster-Webring";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
           <div className="hero-lead">
             <h1>
               <span>McMaster</span>
-              <span>.network</span>
+              <span>Webring</span>
             </h1>
             <p>
               Personal websites by McMaster students, joined into one ring. Every visit heats a site up, so you can

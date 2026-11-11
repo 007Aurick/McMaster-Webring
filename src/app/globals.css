@@ -41,12 +41,8 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0
 .logo-ascii .k { color: #5f696f; }
 .topbar {
   position: relative; z-index: 2; max-width: 1240px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  display: flex; align-items: center; justify-content: flex-end; gap: 16px;
   padding: 14px 32px 0;
-}
-.topbar .brand {
-  font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: 0.01em;
-  text-decoration: none; color: var(--hot); text-transform: uppercase;
 }
 .topbar nav { display: flex; gap: 4px; }
 .topbar nav a {
