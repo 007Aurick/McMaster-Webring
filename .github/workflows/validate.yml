@@ -1,0 +1,25 @@
+name: validate members
+on: pull_request
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Only members.ts and photos may change
+        run: |
+          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          echo "$changed"
+          bad=$(echo "$changed" | grep -vE '^(src/data/members\.ts|public/photos/[^/]+)$' || true)
+          if [ -n "$bad" ]; then
+            echo "::error::This PR changes files outside members.ts / public/photos. A maintainer must review these by hand:"
+            echo "$bad"
+            exit 1
+          fi
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run build
