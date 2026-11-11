@@ -1,7 +1,5 @@
-import { SITE_URL } from "@/lib";
-
 /**
- * <script src="https://mcmaster.network/embed.js" data-user="your-id"></script>
+ * <script src="https://mcmaster-webring.vercel.app/embed.js" data-user="your-id"></script>
  *
  * Optional attributes:
  *   data-ring     mac (default, everyone) | faculty (only your faculty's ring)
@@ -15,7 +13,7 @@ import { SITE_URL } from "@/lib";
 const script = `(function () {
   var s = document.currentScript || document.querySelector('script[src*="/embed.js"][data-user]');
   if (!s) return;
-  var BASE = ${JSON.stringify(SITE_URL)};
+  var BASE = new URL(s.src, location.href).origin;
   var user = s.getAttribute('data-user') || '';
   var ring = s.getAttribute('data-ring') === 'faculty' ? 'faculty' : 'mac';
   var color = s.getAttribute('data-color') || '#ad1229';

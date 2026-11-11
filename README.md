@@ -33,10 +33,10 @@ Open a pull request. The check only passes if the pull request touches `src/data
 ## 2. Add the widget to your site
 
 ```html
-<script src="https://your-domain/embed.js" data-user="your-name"></script>
+<script src="https://mcmaster-webring.vercel.app/embed.js" data-user="your-name"></script>
 ```
 
-`data-user` is the `id` from your entry. The arrows go to the previous and next person. The caption says who is next.
+`data-user` is the `id` from your entry. The arrows go to the previous and next person. The caption says who is next. This address is the live site for now.
 
 | Attribute      | What it does                    | Default   |
 | -------------- | ------------------------------- | --------- |
