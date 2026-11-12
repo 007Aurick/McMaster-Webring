@@ -1,5 +1,5 @@
 /**
- * <script src="https://mcmaster-webring.vercel.app/embed.js" data-user="your-id"></script>
+ * <script src="https://www.mcmasterwebring.com/embed.js" data-user="your-id"></script>
  *
  * Optional attributes:
  *   data-ring     mac (default, everyone) | faculty (only your faculty's ring)

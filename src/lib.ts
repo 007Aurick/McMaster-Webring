@@ -1,4 +1,4 @@
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://mcmaster-webring.vercel.app").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.mcmasterwebring.com").replace(/\/$/, "");
 export const SITE_NAME = "McMaster Webring";
 
 /** The ring mark, coloured with currentColor so it can be themed anywhere. */

@@ -10,7 +10,7 @@ You need three things:
 
 You add yourself at the bottom of the list. After your pull request is merged, your card shows up after the last person, and the arrows on everyone's site point to you.
 
-The live site is [https://mcmaster-webring.vercel.app](https://mcmaster-webring.vercel.app).
+The live site is [https://www.mcmasterwebring.com](https://www.mcmasterwebring.com).
 
 ## 1. Fork the repo
 
@@ -87,7 +87,7 @@ When it is merged, you are on the ring. You do not have to update the widget aga
 Paste this where you want the arrows to appear. Change `your-name` to the same `id` you used above.
 
 ```html
-<script src="https://mcmaster-webring.vercel.app/embed.js" data-user="your-name"></script>
+<script src="https://www.mcmasterwebring.com/embed.js" data-user="your-name"></script>
 ```
 
 The left arrow goes to the person before you. The fireball in the middle opens the webring. The right arrow goes to the person after you. The caption says who is next.
@@ -105,5 +105,5 @@ Optional bits you can add to the script tag:
 Example with a bigger fireball and no caption:
 
 ```html
-<script src="https://mcmaster-webring.vercel.app/embed.js" data-user="your-name" data-size="48" data-caption="off"></script>
+<script src="https://www.mcmasterwebring.com/embed.js" data-user="your-name" data-size="48" data-caption="off"></script>
 ```
