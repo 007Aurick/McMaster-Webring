@@ -41,6 +41,7 @@ Copy this and replace the example values with yours:
   faculty: "engineering",
   program: "Engineering Physics",
   description: "SWE @ Magic Hour AI",
+  photo: "/photos/your-name.jpg",
   github: "https://github.com/you",
   instagram: "https://www.instagram.com/you/",
   linkedin: "https://www.linkedin.com/in/you/",
@@ -58,6 +59,7 @@ What each line means:
 | `faculty` | yes | Exactly one of these words: `engineering`, `health-sciences`, `science`, `business`, `humanities`, `social-sciences`. |
 | `program` | no | Your program, in your own words. `Engineering Physics` is fine. `iBioMed and Engineering Physics` shows up when someone filters either program. |
 | `description` | no | One short line under your name, 80 characters max. Example: `SWE @ Magic Hour AI`. |
+| `photo` | no | The path to the picture you upload in the next step. It must match the filename exactly, like `/photos/your-name.jpg`. |
 | `github` | no | Full link, starting with `https://`. |
 | `instagram` | no | Full link, starting with `https://`. |
 | `linkedin` | no | Full link, starting with `https://`. |
@@ -65,9 +67,31 @@ What each line means:
 
 Delete any link line you do not have. An empty link, or a link that is only a username, will fail the check. Only the links you include show on your card.
 
-Do not change anyone else's entry. Do not edit any other file. The automatic check rejects a pull request that touches anything besides `src/data/members.ts`.
+Do not change anyone else's entry. The only other file you may add is your photo, in the next step. The check rejects a pull request that changes anything else.
 
-## 3. Save it as a pull request
+## 3. Upload your photo
+
+This is optional. If you skip it, the card shows your initials instead of a picture.
+
+The picture has to be a `.jpg`, `.png`, or `.webp`. A square photo looks best. Name the file the same as your `id`, for example `your-name.jpg`.
+
+1. On your fork, click `public`, then `photos`.
+2. Click **Add file**, then **Upload files**.
+3. Drag in your picture. GitHub keeps the filename, so rename the file on your computer first if it is not `your-name.jpg`.
+4. In the commit box at the bottom, choose the **same branch** you used for `members.ts`. Do not commit the photo to `main`.
+5. Click **Commit changes**.
+
+Then the `photo` line in your entry has to be that exact path:
+
+```ts
+photo: "/photos/your-name.jpg",
+```
+
+`your-name.jpg` in the path and `your-name.jpg` in the `photos` folder have to be the same letters, including capitals. `/photos/Your-Name.JPG` will not find `your-name.jpg`.
+
+If the pull request is already open, do these same steps and pick that pull request's branch. The request updates itself. You do not open a second one.
+
+## 4. Save it as a pull request
 
 A pull request asks for your entry to be added to the real list.
 
@@ -82,7 +106,7 @@ A green check means the entry is valid. A red X means something in the entry is 
 
 When it is merged, you are on the ring. You do not have to update the widget again. The arrows start sending people to your site.
 
-## 4. Put the arrows on your website
+## 5. Put the arrows on your website
 
 Paste this where you want the arrows to appear. Change `your-name` to the same `id` you used above.
 
