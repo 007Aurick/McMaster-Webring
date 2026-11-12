@@ -38,7 +38,6 @@ Copy this and replace the example values with yours:
   id: "your-name",
   name: "Your Name",
   website: "https://yoursite.com",
-  faculty: "engineering",
   program: "Engineering Physics",
   description: "SWE @ Magic Hour AI",
   photo: "/photos/your-name.jpg",
@@ -56,8 +55,7 @@ What each line means:
 | `id` | yes | A short name with lowercase letters, numbers, and dashes only. `jane-doe` is good. `Jane Doe` is not. This is also the name you put in the widget later. Nobody else can have the same one. |
 | `name` | yes | Your name, the way you want it on the card. |
 | `website` | yes | Your site, starting with `https://`. This is where the arrows send people. |
-| `faculty` | yes | Exactly one of these words: `engineering`, `health-sciences`, `science`, `business`, `humanities`, `social-sciences`. |
-| `program` | no | Your program, in your own words. `Engineering Physics` is fine. `iBioMed and Engineering Physics` shows up when someone filters either program. |
+| `program` | yes | Your program, in your own words, 80 characters max. `Engineering Physics`, `Computer Science`, `Software Engineering`, `Electrical`, `Computer`, or `iBioMed` are the filters. `iBioMed and Engineering Physics` shows up under both. |
 | `description` | no | One short line under your name, 80 characters max. Example: `SWE @ Magic Hour AI`. |
 | `photo` | no | The path to the picture you upload in the next step. It must match the filename exactly, like `/photos/your-name.jpg`. |
 | `github` | no | Full link, starting with `https://`. |

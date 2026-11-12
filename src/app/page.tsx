@@ -28,8 +28,8 @@ export default function Home() {
             <ol className="steps">
               <li>
                 <strong>Add yourself.</strong> Fork <a href={REPO}>the repo</a> and add your entry to the bottom
-                of <code>src/data/members.ts</code>: your name, site, and <code>faculty</code>. Optional:{" "}
-                <code>description</code> (one line, like SWE @ Magic Hour AI), <code>program</code>,{" "}
+                of <code>src/data/members.ts</code>: your name, site, and <code>program</code>. Optional:{" "}
+                <code>description</code> (one line, like SWE @ Magic Hour AI),{" "}
                 <code>photo</code>, <code>github</code>, <code>linkedin</code>, <code>twitter</code>, and{" "}
                 <code>instagram</code>.
               </li>

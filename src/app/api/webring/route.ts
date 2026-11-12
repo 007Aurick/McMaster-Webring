@@ -10,8 +10,8 @@ const pub = (m: Member) => ({
   id: m.id,
   name: m.name,
   website: m.website,
-  faculty: m.faculty,
-  facultyName: FACULTIES[m.faculty],
+  faculty: m.faculty ?? null,
+  facultyName: m.faculty ? FACULTIES[m.faculty] : null,
   building: m.building ?? null,
 });
 

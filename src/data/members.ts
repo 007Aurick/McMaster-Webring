@@ -16,10 +16,9 @@
  *   id       lowercase-with-hyphens, unique (e.g. "jane-doe")
  *   name     your name
  *   website  full URL, https://...
- *   faculty  one of FACULTIES below. Puts you in your faculty's ring too.
+ *   program  e.g. "Engineering Physics", "Computer Science" (max 80 characters)
  *
  * Optional, shown on your card:
- *   program      e.g. "Engineering Physics", "Computer Science"
  *   description  one line, e.g. "SWE @ Magic Hour AI" (max 80 characters)
  *   photo        "/photos/your-id.jpg"
  *   github, linkedin, twitter, instagram   full URLs. Only the ones you add show up.
@@ -40,10 +39,10 @@ export interface Member {
   id: string;
   name: string;
   website: string;
-  faculty: Faculty;
+  faculty?: Faculty;
   building?: string;
   description?: string;
-  program?: string;
+  program: string;
   year?: string;
   tags?: Tag[];
   photo?: string;
@@ -99,7 +98,6 @@ export const rawMembers: Member[] = [
     id: "aurick-anwar",
     name: "Aurick Anwar",
     website: "https://aurickanwar.com",
-    faculty: "engineering",
     program: "Engineering Physics",
     description: "SWE @ Magic Hour AI",
     photo: "/photos/aurick.jpg",
@@ -126,9 +124,11 @@ function safeUrl(u?: string): string | undefined {
 }
 
 export const members: Member[] = rawMembers
-  .filter((m) => safeUrl(m.website) && m.faculty in FACULTIES)
+  .filter((m) => safeUrl(m.website) && m.program?.trim())
   .map((m) => ({
     ...m,
+    faculty: m.faculty && m.faculty in FACULTIES ? m.faculty : undefined,
+    program: m.program.replace(/\s+/g, " ").trim().slice(0, 80),
     building: m.building?.trim().slice(0, 80) || undefined,
     description: m.description?.replace(/\s+/g, " ").trim().slice(0, 80) || undefined,
     website: safeUrl(m.website)!,
@@ -162,7 +162,7 @@ export type Scope = "mac" | "faculty";
 export function getRing(id: string, scope: Scope = "mac"): Member[] {
   if (scope === "mac") return members;
   const me = members.find((m) => m.id === id);
-  return me ? members.filter((m) => m.faculty === me.faculty) : members;
+  return me?.faculty ? members.filter((m) => m.faculty === me.faculty) : members;
 }
 
 /** Previous / next member in the ring (or in their faculty's ring). */

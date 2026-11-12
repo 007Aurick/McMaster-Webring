@@ -6,7 +6,7 @@ import { readFileSync, existsSync, readdirSync } from "node:fs";
 const ts = (await import("typescript")).default;
 const src = readFileSync("src/data/members.ts", "utf8");
 const js = ts.transpileModule(src, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2020 } }).outputText;
-const { rawMembers: members, TAG_OPTIONS, FACULTIES } = await import("data:text/javascript;base64," + Buffer.from(js).toString("base64"));
+const { rawMembers: members, TAG_OPTIONS } = await import("data:text/javascript;base64," + Buffer.from(js).toString("base64"));
 
 const errors = [];
 const ids = new Set();
@@ -21,7 +21,9 @@ for (const [i, m] of members.entries()) {
   if (ids.has(m.id)) errors.push(`${who}: duplicate id`);
   ids.add(m.id);
   if (!m.name?.trim()) errors.push(`${who}: name is required`);
-  if (!(m.faculty in FACULTIES)) errors.push(`${who}: faculty must be one of ${Object.keys(FACULTIES).join(", ")}`);
+  if (!m.program?.trim()) errors.push(`${who}: program is required`);
+  else if (typeof m.program !== "string" || m.program.length > 80 || /[\r\n]/.test(m.program))
+    errors.push(`${who}: program must be one line of 80 characters or less`);
   if (m.building !== undefined && (typeof m.building !== "string" || m.building.length > 80))
     errors.push(`${who}: building must be one line of 80 characters or less`);
   if (typeof m.building === "string" && /[\r\n]/.test(m.building)) errors.push(`${who}: building must be one line`);

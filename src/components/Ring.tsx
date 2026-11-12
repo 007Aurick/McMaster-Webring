@@ -154,7 +154,7 @@ export default function Ring({
           {hovered ? (
             <>
               <strong>{hovered.name}</strong>
-              <span className="fac">{FACULTIES[hovered.faculty]}</span>
+              {hovered.faculty && <span className="fac">{FACULTIES[hovered.faculty]}</span>}
               {hovered.building && <span className="bld">building {hovered.building}</span>}
             </>
           ) : (
